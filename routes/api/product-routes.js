@@ -10,7 +10,6 @@ router.get('/', (req, res) => {
   Product.findAll({
     include: [Category, {
       model: Tag,
-      through: ProductTag
     }],
   }) .then(data => res.json(data))
 });
@@ -22,7 +21,6 @@ router.get('/:id', (req, res) => {
   Product.findByPk(req.params.id ,{
     include: [Category, {
       model: Tag,
-      through: ProductTag
     }],
   }) .then(data => res.json(data))
 });
@@ -103,6 +101,9 @@ router.put('/:id', (req, res) => {
 
 router.delete('/:id', (req, res) => {
   // delete one product by its `id` value
+  Product.destroy({
+    id: req.params.id,
+  }) .then(data => res.json(data))
 });
 
 module.exports = router;
