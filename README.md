@@ -1,103 +1,35 @@
 # e-commerce-back-end
 
-// add product.js material like the category.js
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-- `Category`
+# Description
 
-  - `id`
+###
 
-    - Integer.
+# Table of contents
 
-    - Doesn't allow null values.
+- [Installation](#installation)
+- [Usage](#usage)
+- [Languages Used](#languages-used)
+- [Credits](#credits)
+- [Questions](#questions)
 
-    - Set as primary key.
+# Installation
 
-    - Uses auto increment.
+### MySQL and Node.js will need to be installed and then will need to be cloned down to their local computer. Once cloned down, run npm install to get the necessary packages. Then npm seed run and node server.js will need to be run for the application to run.
 
-  - `category_name`
+# Usage
 
-    - String.
+### Link to video walkthrough:
 
-    - Doesn't allow null values.
+# Languages Used
 
-- `Product`
+### MySQL, Dotenv, Sequelize, JavaScript, Node.js, Express.js
 
-  - `id`
+# Credits
 
-    - Integer.
+### Callan Hunter
 
-    - Doesn't allow null values.
+### LinkedIn: https://www.linkedin.com/in/callan-hunter-195816196/
 
-    - Set as primary key.
-
-    - Uses auto increment.
-
-  - `product_name`
-
-    - String.
-
-    - Doesn't allow null values.
-
-  - `price`
-
-    - Decimal.
-
-    - Doesn't allow null values.
-
-    - Validates that the value is a decimal.
-
-  - `stock`
-
-    - Integer.
-
-    - Doesn't allow null values.
-
-    - Set a default value of `10`.
-
-    - Validates that the value is numeric.
-
-  - `category_id`
-
-    - Integer.
-
-    - References the `Category` model's `id`.
-
-- `Tag`
-
-  - `id`
-
-    - Integer.
-
-    - Doesn't allow null values.
-
-    - Set as primary key.
-
-    - Uses auto increment.
-
-  - `tag_name`
-
-    - String.
-
-- `ProductTag`
-
-  - `id`
-
-    - Integer.
-
-    - Doesn't allow null values.
-
-    - Set as primary key.
-
-    - Uses auto increment.
-
-  - `product_id`
-
-    - Integer.
-
-    - References the `Product` model's `id`.
-
-  - `tag_id`
-
-    - Integer.
-
-    - References the `Tag` model's `id`.
+### GitHub: https://github.com/callanhunter

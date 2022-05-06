@@ -10,6 +10,7 @@ router.get('/', (req, res) => {
   Product.findAll({
     include: [Category, {
       model: Tag,
+      through: ProductTag
     }],
   }) .then(data => res.json(data))
 });
@@ -21,6 +22,7 @@ router.get('/:id', (req, res) => {
   Product.findByPk(req.params.id ,{
     include: [Category, {
       model: Tag,
+      through: ProductTag
     }],
   }) .then(data => res.json(data))
 });

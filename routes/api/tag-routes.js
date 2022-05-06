@@ -22,7 +22,9 @@ router.get('/:id', (req, res) => {
       model: Product,
       through: ProductTag,
     }],
-  }) .then(data => res.json(data))
+  }) 
+  
+  .then(data => res.json(data))
 });
 
 router.post('/', (req, res) => {
