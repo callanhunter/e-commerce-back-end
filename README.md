@@ -20,11 +20,18 @@
 
 # Usage
 
-### Link to video walkthrough:
+### Link to video walkthrough: https://drive.google.com/file/d/1xgsNKJcv5_rKqNUHzYOg_tEVnv-MsqUk/view
 
 # Languages Used
 
-### MySQL, Dotenv, Sequelize, JavaScript, Node.js, Express.js
+###
+
+- MySQL
+- Dotenv
+- Sequelize
+- JavaScript
+- Node.js
+- Express.js
 
 # Credits
 
