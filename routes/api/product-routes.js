@@ -6,8 +6,8 @@ const { Product, Category, Tag, ProductTag } = require("../../models");
 // get all products
 router.get("/", (req, res) => {
   // find all products
-  // be sure to include its associated Category and Tag data
   Product.findAll({
+    // be sure to include its associated Category and Tag data
     include: [{ model: Category }, { model: Tag }],
   })
     .then((productData) => res.json(productData))
@@ -20,26 +20,11 @@ router.get("/", (req, res) => {
 // get one product
 router.get("/:id", (req, res) => {
   // find a single product by its `id`
-  // be sure to include its associated Category and Tag data
-  Product.findByPk(req.params.id, {
-    include: [
-      Category,
-      {
-        model: Tag,
-        through: ProductTag,
-      },
-    ],
-  }).then((data) => res.json(data));
-});
-
-// get one product
-router.get("/:id", (req, res) => {
-  // find a single product by its `id`
-  // be sure to include its associated Category and Tag data
   Product.findOne({
     where: {
       id: req.params.id,
     },
+    // be sure to include its associated Category and Tag data
     include: [{ model: Category }, { model: Tag }],
   })
     .then((productData) => {
@@ -135,7 +120,17 @@ router.delete("/:id", (req, res) => {
     where: {
       id: req.params.id,
     },
-  }).then((data) => res.json(data));
+  })
+    .then((productData) => {
+      if (!productData) {
+        res.status(404).json({ massage: "No product found with this id" });
+        return;
+      }
+      res.json(productData);
+    })
+    .catch((err) => {
+      res.status(500).json(err);
+    });
 });
 
 module.exports = router;
